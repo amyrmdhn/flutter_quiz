@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 const primaryColor = Color(0xFFFFBC02);
 const greenColor = Color(0xFF6AC259);
 const greyColor = Color(0xFFDCDCDC);
-const blueCOlor = Color(0xFF1D70AE);
+const blueColor = Color(0xFF1D70AE);
 const splashColor = Colors.black12;
 
 const answerButtonColor = [
@@ -21,6 +21,7 @@ const defaultPadding = 20.0;
 
 class StyledText extends StatelessWidget {
   final String text;
+  final Color color;
   final double fontSize;
   final FontWeight fontWeight;
   final TextAlign? textAlign;
@@ -31,6 +32,7 @@ class StyledText extends StatelessWidget {
     required this.text,
     this.padding = 0,
     this.fontSize = 14.0,
+    this.color = greyColor,
     this.fontWeight = FontWeight.normal,
     this.textAlign,
   });
@@ -44,7 +46,7 @@ class StyledText extends StatelessWidget {
       child: Text(
         text,
         style: GoogleFonts.lato(
-          color: greyColor,
+          color: color,
           fontSize: fontSize,
           fontWeight: fontWeight,
         ),
