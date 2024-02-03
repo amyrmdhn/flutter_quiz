@@ -8,6 +8,12 @@ class Question {
     required this.answers,
     this.alphabets = const ['A', 'B', 'C', 'D'],
   });
+
+  List<String> get shuffeledAnswers {
+    var shuffeledAnswers = List.of(answers);
+    shuffeledAnswers.shuffle();
+    return shuffeledAnswers;
+  }
 }
 
 const questions = [
