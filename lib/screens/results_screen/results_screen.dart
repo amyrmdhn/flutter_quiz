@@ -39,6 +39,7 @@ class ResultsScreen extends StatelessWidget {
                         fontSize: 16.0,
                       ),
                       SizedBox(height: defaultPadding),
+                      // TODO: tambahkan logic untuk menampilkan aktual text
                       StyledText(
                         text:
                             'You attempt 6 questions and and from that 5 answers is correct.',
@@ -48,6 +49,7 @@ class ResultsScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+                  // TODO: Tambahkan logic untuk Try again!
                   ElevatedButton.icon(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(

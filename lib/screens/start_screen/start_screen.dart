@@ -20,8 +20,6 @@ class StartScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
             child: Center(
               child: Column(
-                // TODO ini bisa dihapus nanti, pada sesi commit refactor
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Spacer(flex: 2),
                   Image.asset(
