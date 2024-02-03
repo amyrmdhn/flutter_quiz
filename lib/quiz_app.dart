@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_quiz/screens/queustions_screen/questions_screen.dart';
 
 import './screens/start_screen/start_screen.dart';
 
@@ -10,7 +11,7 @@ class QuizApp extends StatelessWidget {
     return const  MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: StartScreen(),
+        body: QuestionsScreen(),
       ),
     );
   }
