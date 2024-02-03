@@ -5,7 +5,11 @@ import 'package:websafe_svg/websafe_svg.dart';
 import '/constants.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen({super.key});
+  final void Function() startQuiz;
+  const StartScreen({
+    super.key,
+    required this.startQuiz,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +46,7 @@ class StartScreen extends StatelessWidget {
                     height: 50,
                     width: 200,
                     child: ElevatedButton.icon(
-                      onPressed: () {},
+                      onPressed: startQuiz,
                       style: ElevatedButton.styleFrom(
                           foregroundColor: greyColor,
                           backgroundColor: primaryColor,
