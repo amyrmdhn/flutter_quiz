@@ -40,7 +40,7 @@ class _QuizAppState extends State<QuizApp> {
     if (activeScreen == 'questions-screen') {
       currentScreen = QuestionsScreen(onSelectAnswer: chooseAnswer);
     } else if (activeScreen == 'results-screen') {
-      currentScreen = const ResultsScreen();
+      currentScreen =  ResultsScreen(choosenAnswer: selectedAnswers);
     }
 
     return MaterialApp(
