@@ -9,17 +9,23 @@ import '../../constants.dart';
 import 'components/answer_button.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({super.key});
+  final void Function(String answer) onSelectAnswer;
+
+  const QuestionsScreen({
+    super.key,
+    required this.onSelectAnswer,
+  });
 
   @override
   State<QuestionsScreen> createState() => _QuestionsScreenState();
 }
 
 class _QuestionsScreenState extends State<QuestionsScreen> {
-  var currentQuestionIndex = 5;
+  var currentQuestionIndex = 0;
 
-  void answerQuestion() {
+  void answerQuestion(String answer) {
     setState(() {
+      widget.onSelectAnswer(answer);
       currentQuestionIndex++;
     });
   }
@@ -59,7 +65,9 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                     (answer, index) => AnswerButton(
                       answer: answer,
                       char: currentQuestion.alphabets[index],
-                      answerQuestion: answerQuestion,
+                      answerQuestion: () {
+                        answerQuestion(answer);
+                      },
                     ),
                   ),
                   const Spacer(flex: 2),
