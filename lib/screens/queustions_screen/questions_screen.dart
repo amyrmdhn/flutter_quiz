@@ -16,7 +16,7 @@ class QuestionsScreen extends StatefulWidget {
 }
 
 class _QuestionsScreenState extends State<QuestionsScreen> {
-  var currentQuestionIndex = 2;
+  var currentQuestionIndex = 5;
 
   void answerQuestion() {
     setState(() {
@@ -55,11 +55,14 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                     textAlign: TextAlign.center,
                   ),
                   const Spacer(),
-                  AnswerButton(),
-                  AnswerButton(),
-                  AnswerButton(),
-                  AnswerButton(),
-                  Spacer(flex: 2),
+                  ...currentQuestion.shuffeledAnswers.indexedMap(
+                    (answer, index) => AnswerButton(
+                      answer: answer,
+                      char: currentQuestion.alphabets[index],
+                      answerQuestion: answerQuestion,
+                    ),
+                  ),
+                  const Spacer(flex: 2),
                 ],
               ),
             ),

@@ -5,18 +5,25 @@ import '../../../constants.dart';
 import 'answer_text.dart';
 
 class AnswerButton extends StatelessWidget {
+  final String answer;
+  final String char;
+  final void Function() answerQuestion;
+
   const AnswerButton({
     super.key,
+    required this.answer,
+    required this.char,
+    required this.answerQuestion,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200.0,
+      width: 300,
       height: 50.0,
       margin: const EdgeInsets.only(bottom: defaultPadding / 1.5),
       decoration: BoxDecoration(
-        color: answerButtonColor[0],
+        color: primaryColor,
         borderRadius: BorderRadius.circular(20.0),
       ),
       child: Material(
@@ -26,24 +33,29 @@ class AnswerButton extends StatelessWidget {
           splashColor: splashColor,
           splashFactory: InkRipple.splashFactory,
           borderRadius: BorderRadius.circular(20.0),
-          onTap: () {},
+          onTap: answerQuestion,
           child: Row(
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: defaultPadding,
+                  horizontal: defaultPadding / 1.2,
                 ),
                 child: Text(
-                  'A',
+                  char,
                   style: GoogleFonts.lato(
                     color: greyColor,
                   ),
                 ),
               ),
-              const VerticalDivider(color: greyColor),
-              const AnsweredText(
-                text: '2 Types',
-                padding: defaultPadding,
+              const VerticalDivider(
+                color: greyColor,
+                width: 0,
+              ),
+              Flexible(
+                child: AnsweredText(
+                  text: answer,
+                  padding: defaultPadding / 1.5,
+                ),
               ),
             ],
           ),
