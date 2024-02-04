@@ -54,8 +54,7 @@ class ResultsScreen extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      // TODO: tambahkan logic untuk menampilkan teks "Condolences :(" jika score < 75%
-                      const ResultsExpression(),
+                      ResultsExpression(score: score),
                       StyledText(
                         text: '$score% Score',
                         color: greenColor,
@@ -68,7 +67,6 @@ class ResultsScreen extends StatelessWidget {
                         fontSize: 16.0,
                       ),
                       const SizedBox(height: defaultPadding),
-                      // TODO: tambahkan logic untuk menampilkan aktual text
                       StyledText(
                         text:
                             'You attempt ${questions.length} questions and and from that $numCorrectAnswer answers is correct.',
@@ -78,7 +76,6 @@ class ResultsScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  // TODO: Tambahkan logic untuk Try again!
                   ElevatedButton.icon(
                     onPressed: onRestart,
                     style: ElevatedButton.styleFrom(
