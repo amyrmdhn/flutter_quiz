@@ -68,7 +68,7 @@ class ResultsScreen extends StatelessWidget {
                         fontSize: 16.0,
                       ),
                       const SizedBox(height: defaultPadding),
-                      const ResultsDetail(),
+                       ResultsDetail(numCorrectAnswer: numCorrectAnswer),
                     ],
                   ),
                   ElevatedButton.icon(
