@@ -6,6 +6,7 @@ import '../../constants.dart';
 import '../../models/summary_quiz.dart';
 
 import 'components/results_card.dart';
+import 'components/results_detail.dart';
 import 'components/results_expression.dart';
 
 class ResultsScreen extends StatelessWidget {
@@ -67,13 +68,7 @@ class ResultsScreen extends StatelessWidget {
                         fontSize: 16.0,
                       ),
                       const SizedBox(height: defaultPadding),
-                      StyledText(
-                        text:
-                            'You attempt ${questions.length} questions and and from that $numCorrectAnswer answers is correct.',
-                        padding: defaultPadding,
-                        fontSize: 16.0,
-                        textAlign: TextAlign.center,
-                      ),
+                      const ResultsDetail(),
                     ],
                   ),
                   ElevatedButton.icon(
@@ -96,3 +91,4 @@ class ResultsScreen extends StatelessWidget {
     );
   }
 }
+

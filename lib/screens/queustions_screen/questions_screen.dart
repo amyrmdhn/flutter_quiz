@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_quiz/screens/queustions_screen/components/question_text.dart';
-
 import 'package:websafe_svg/websafe_svg.dart';
 
-import '../../models/question.dart';
 import '../../constants.dart';
+import '../../models/question.dart';
 
 import 'components/answer_button.dart';
+import 'components/question_text.dart';
 
 class QuestionsScreen extends StatefulWidget {
   final void Function(String answer) onSelectAnswer;
