@@ -33,6 +33,13 @@ class _QuizAppState extends State<QuizApp> {
     });
   }
 
+  void restartQuiz() {
+    setState(() {
+      selectedAnswers = [];
+      activeScreen = 'start-screen';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget currentScreen = StartScreen(startQuiz: switchScreen);
@@ -40,7 +47,10 @@ class _QuizAppState extends State<QuizApp> {
     if (activeScreen == 'questions-screen') {
       currentScreen = QuestionsScreen(onSelectAnswer: chooseAnswer);
     } else if (activeScreen == 'results-screen') {
-      currentScreen =  ResultsScreen(choosenAnswer: selectedAnswers);
+      currentScreen = ResultsScreen(
+        choosenAnswer: selectedAnswers,
+        onRestart: restartQuiz,
+      );
     }
 
     return MaterialApp(

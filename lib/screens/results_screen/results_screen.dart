@@ -10,10 +10,12 @@ import 'components/results_expression.dart';
 
 class ResultsScreen extends StatelessWidget {
   final List<String> choosenAnswer;
+  final void Function() onRestart;
 
   const ResultsScreen({
     super.key,
     required this.choosenAnswer,
+    required this.onRestart,
   });
 
   List<SummaryQuiz> get summaryQuiz {
@@ -78,7 +80,7 @@ class ResultsScreen extends StatelessWidget {
                   ),
                   // TODO: Tambahkan logic untuk Try again!
                   ElevatedButton.icon(
-                    onPressed: () {},
+                    onPressed: onRestart,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: blueColor,
                       foregroundColor: Colors.white,
