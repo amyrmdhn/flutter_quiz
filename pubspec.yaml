@@ -52,6 +52,7 @@ flutter:
   assets:
     - assets/images/bg.svg
     - assets/images/congrats.svg
+    - assets/images/condolences.svg
     - assets/images/quiz-logo.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
