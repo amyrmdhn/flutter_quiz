@@ -19,6 +19,13 @@ const answerButtonColor = [
 
 const defaultPadding = 20.0;
 
+extension IndexedIterable<E> on Iterable<E> {
+  Iterable<T> indexedMap<T>(T Function(E element, int index) f) {
+    var index = 0;
+    return map((e) => f(e, index++));
+  }
+}
+
 class StyledText extends StatelessWidget {
   final String text;
   final Color color;
